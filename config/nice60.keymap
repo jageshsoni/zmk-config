@@ -14,7 +14,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-           bindings = bindings = <&kp KC_A>;
+           bindings = <&kp KC_A>;
         };
     };
 };
