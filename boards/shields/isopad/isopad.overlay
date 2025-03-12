@@ -12,7 +12,7 @@
         compatible = "zmk,kscan-gpio-matrix";
         debounce-press-ms = <5>;
         debounce-release-ms = <5>;
-        polling-interval-ms = <10>;
+        //polling-interval-ms = <10>;
         
         diode-direction = "col2row";  // Adjust if needed
 
