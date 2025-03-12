@@ -1,0 +1,2 @@
+config SHIELD_ISOPAD
+    def_bool $(shields_list_contains, isopad)
