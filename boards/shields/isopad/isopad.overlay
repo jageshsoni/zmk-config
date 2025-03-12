@@ -9,14 +9,10 @@
     };
 
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
+        compatible = "zmk,kscan-direct";
         debounce-press-ms = <5>;
         debounce-release-ms = <5>;
-        //polling-interval-ms = <10>;
-        
-        diode-direction = "col2row";  // Adjust if needed
 
-        row-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // Row = GPIO 031
-        col-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;  // Column (dummy pin)
+        row-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // Detects GND short
     };
 };
