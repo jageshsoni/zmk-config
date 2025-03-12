@@ -2,14 +2,17 @@ name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  build:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clean up previous builds
-        run: rm -rf build
+      - name: Cleanup previous artifacts
+        run: |
+          rm -rf build
+          rm -rf /tmp/zmk-config
 
-      - name: Build firmware
-        uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+  build:
+    needs: cleanup  # Ensure cleanup runs before build
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
