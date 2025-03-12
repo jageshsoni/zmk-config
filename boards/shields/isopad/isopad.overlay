@@ -9,7 +9,7 @@
     };
 
     kscan0: kscan {
-        compatible = "zmk,kscan-direct";
+        compatible = "zmk,kscan-gpio-direct";
         debounce-press-ms = <5>;
         debounce-release-ms = <5>;
 
