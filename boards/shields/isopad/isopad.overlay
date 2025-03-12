@@ -13,6 +13,6 @@
         debounce-press-ms = <5>;
         debounce-release-ms = <5>;
 
-        row-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // Detects GND short
+        input-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // Detects GND short
     };
 };
