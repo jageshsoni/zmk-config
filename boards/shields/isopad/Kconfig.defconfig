@@ -2,6 +2,6 @@ if SHIELD_ISOPAD
 
 config ZMK_KEYBOARD_ISOPAD
     bool "Enable ISOPAD keyboard"
-    default y
+    default "isopad"
 
 endif
