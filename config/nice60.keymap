@@ -19,7 +19,7 @@
     behaviors {
         bt_ht: bt_ht {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&bt_clr>, <&kp ENTER;
+            bindings = <&bt_clr>, <&kp ENTER>;
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
