@@ -1,0 +1,13 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    macropad_physical_layout: macropad_physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "2-key macropad layout";
+
+        keys  //        w    h    x    y    rot    rx   ry
+            = <&key_physical_attrs 100 100   0    0     0     0    0>  // Key 1
+            , <&key_physical_attrs 100 100 100    0     0     0    0>  // Key 2
+            ;
+    };
+};

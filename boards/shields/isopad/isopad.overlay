@@ -3,6 +3,7 @@
  * Uses GPIO 031 as the single key
  */
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "isopad-layouts.dtsi"
 
 &isopad_physical_layout {
     transform = <&default_transform>;
