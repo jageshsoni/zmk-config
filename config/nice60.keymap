@@ -8,13 +8,17 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+&mt {
+    tapping-term-ms = <400>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &mt BT_CLR ENTER  // Key 1: Tap = Enter, Hold = Bluetooth Clear
+                &mt A ENTER  // Key 1: Tap = Enter, Hold = Bluetooth Clear
                 &kp SPACE         // Key 2: Normal Space Key
             >;
         };
