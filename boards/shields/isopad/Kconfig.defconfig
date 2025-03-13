@@ -1,6 +1,6 @@
 if SHIELD_ISOPAD
 
-config ZMK_KEYBOARD_ISOPAD
+config ZMK_KEYBOARD_NAME
     default "isopad"
 
 endif
