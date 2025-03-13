@@ -1,0 +1,23 @@
+/*
+ * 1-key Macropad Shield for NRF52840 Pro Micro
+ * Uses GPIO 031 as the single key
+ */
+
+ / {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        debounce-press-ms = <5>;
+        debounce-release-ms = <5>;
+
+        diode-direction = "col2row";  // Column is output, row is input
+
+        row-gpios = < &gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP) >,
+                    < &gpio0 02 (GPIO_ACTIVE_LOW | GPIO_PULL_UP) >;
+
+        col-gpios = < &gpio0 10 (GPIO_ACTIVE_HIGH) >;  // Column for Key 2
+    };
+};
