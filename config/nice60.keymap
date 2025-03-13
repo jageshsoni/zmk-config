@@ -12,10 +12,6 @@
     tapping-term-ms = <400>; // Global tap-hold threshold
 };
 
-&bt {
-    tapping-term-ms = <400>;
-};
-
 / {
     behaviors {
         bt_ht: bt_hold_tap {
