@@ -22,11 +22,17 @@
     };
 
     behaviors {
+        bt_tap_dance: bt_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&bt_clr_macro>;
+        };
+
         bt_ht: bt_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            bindings = <&kp ENTER>, <&bt_clr_macro>;
+            bindings = <&kp ENTER>, <&bt_tap_dance>;
         };
     };
 
@@ -35,8 +41,7 @@
 
         default_layer {
             bindings = <
-                &bt_ht 0 0    // Tap = ENTER, Double Tap = Bluetooth Clear
-                &bt BT_CLR             // Key 2: Normal Space Key
+                &bt_ht 0 0  // Tap = ENTER, Hold = Bluetooth Clear
             >;
         };
     };
