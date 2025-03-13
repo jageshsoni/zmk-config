@@ -4,22 +4,37 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <500>;
+    tapping-term-ms = <400>; // Global tap-hold threshold
+};
+
+&bt {
+    tapping-term-ms = <400>;
 };
 
 / {
+    behaviors {
+        bt_ht: bt_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // Ensures hold action takes precedence if held
+            tapping-term-ms = <400>;   // Adjust tap vs. hold threshold
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&bt>;   // Tap = Keypress, Hold = Bluetooth Clear
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &mt BT_CLR ENTER  // Key 1: Tap = Enter, Hold = Bluetooth Clear
-                &kp SPACE         // Key 2: Normal Space Key
+                &bt_ht ENTER BT_CLR  // Key 1: Tap = ENTER, Hold = Bluetooth Clear
+                &kp SPACE            // Key 2: Normal Space Key
             >;
         };
     };
