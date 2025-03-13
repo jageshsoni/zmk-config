@@ -8,25 +8,24 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 
-&mt {
-    tapping-term-ms = <400>;
-};
 
 / {
     macros {
-        bt_clr_macro: bt_clr_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>;
-        };
+        ZMK_MACRO(bt_clr, bindings = <&bt BT_CLR>;);
+        ZMK_MACRO(bt_nxt, bindings = <&bt BT_NXT>;);
     };
 
     behaviors {
-        td_bt_clear: td_bt_clear {
+        td_bt_actions: td_bt_actions {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <2000>;
-            bindings = <&kp ENTER>, <&bt_clr_macro>;
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;  // Adjust for sensitivity
+
+            bindings = <
+                &kp ENTER   // Single tap → Enter
+                &bt_nxt     // Double tap → Bluetooth Next
+                &bt_clr     // Hold → Bluetooth Clear
+            >;
         };
     };
 
@@ -35,8 +34,8 @@
 
         default_layer {
             bindings = <
-                &td_bt_clear  // Tap = ENTER, Hold = BT_CLR
-                &bt BT_CLR    // Key 2: Normal Bluetooth Clear Key
+                &td_bt_actions 0 0  // Configured Tap Dance key
+                &kp SPACE           // Normal Space Key
             >;
         };
     };
