@@ -13,20 +13,25 @@
 };
 
 / {
+    macros {
+        ZMK_MACRO(bt_clr, bindings = <&bt BT_CLR>;)
+    };
+
     behaviors {
-        bt_clear_macro: bt_clear_macro {
-            compatible = "zmk,behavior-macro";
+        enter_bt_tap_dance: enter_bt_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&bt BT_CLR>;
+            bindings = <&kp ENTER>, <&bt_clr>;
         };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &mt ENTER &bt_clear_macro
-                &kp SPACE
+                &enter_bt_tap_dance    // Tap = ENTER, Double Tap = Bluetooth Clear
+                &kp SPACE              // Key 2: Normal Space Key
             >;
         };
     };
