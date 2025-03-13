@@ -11,8 +11,17 @@
 
 / {
     macros {
-        ZMK_MACRO(bt_clr, bindings = <&bt BT_CLR>;);
-        ZMK_MACRO(bt_nxt, bindings = <&bt BT_NXT>;);
+        bt_clr_macro: bt_clr_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_CLR>;
+        };
+        bt_nxt_macro: bt_nxt_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_NXT>;
+        };
+
     };
 
     behaviors {
@@ -23,8 +32,8 @@
 
             bindings = <
                 &kp ENTER   // Single tap → Enter
-                &bt_nxt     // Double tap → Bluetooth Next
-                &bt_clr     // Hold → Bluetooth Clear
+                &bt_nxt_macro     // Double tap → Bluetooth Next
+                &bt_clr_macro     // Hold → Bluetooth Clear
             >;
         };
     };
