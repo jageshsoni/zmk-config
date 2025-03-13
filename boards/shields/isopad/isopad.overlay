@@ -6,7 +6,7 @@
 #include "isopad-layouts.dtsi"
 
 &isopad_physical_layout {
-    transform = <&default_transform>;
+    transform = <&isopad_transform>;
 };
 
  / {
@@ -28,7 +28,7 @@
         col-gpios = < &gpio0 10 (GPIO_ACTIVE_HIGH) >;  // Column for Key 2
     };
 
-    default_transform: keymap_transform0 {
+    default_transform: isopad_transform {
         compatible = "zmk,matrix-transform";
         columns = <1>;
         rows = <2>;
