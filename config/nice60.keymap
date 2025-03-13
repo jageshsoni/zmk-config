@@ -28,16 +28,9 @@
     behaviors {
         td_bt_actions: td_bt_actions {
             compatible = "zmk,behavior-tap-dance";
-            tapping-term-ms = <400>;
+            tapping-term-ms = <500>;
             #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&kp A>;
-        };
-
-        ht_bt_clr: ht_bt_clr {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            bindings = <&td_bt_actions>, <&kp S>;  // Tap-Dance on tap, BT_CLR on hold
+            bindings = <&kp ENTER>, <&kp A>, <&kp S>;
         };
     };
 
@@ -46,7 +39,7 @@
 
         default_layer {
             bindings = <
-                &ht_bt_clr 0 0
+                &td_bt_actions
                 &bt BT_CLR
             >;
         };
