@@ -18,7 +18,7 @@
 
         default_layer {
             bindings = <
-                &lt 0 ENTER &kp SPACE  // Key 1: Tap = ENTER, Hold = Bluetooth Clear
+                &lt 0 ENTER SPACE  // Key 1: Tap = ENTER, Hold = Bluetooth Clear
                 &bt BT_CLR               // Key 2: Normal Space Key
             >;
         };
