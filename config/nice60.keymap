@@ -13,12 +13,18 @@
 };
 
 / {
-        keymap {
+    behaviors {
+        bt_clear_macro: bt_clear_macro {
+            compatible = "zmk,behavior-macro";
+            bindings = <&bt BT_CLR>;
+        };
+    };
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &ht ENTER &bt BT_CLR
+                &ht ENTER &bt_clear_macro
                 &kp SPACE
             >;
         };
