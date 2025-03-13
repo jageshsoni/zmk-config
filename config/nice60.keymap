@@ -16,12 +16,12 @@
     macros {
         ZMK_MACRO(bt_clr, bindings = <&bt BT_CLR>;)
     };
-
     behaviors {
-        enter_bt_tap_dance: enter_bt_tap_dance {
+        bt_ht: bt_ht {
             compatible = "zmk,behavior-hold-tap";
+            bindings = <&bt_clr>, <&kp ENTER;
             #binding-cells = <2>;
-            bindings = <&kp ENTER>, <&bt_clr>;
+            tapping-term-ms = <300>;
         };
     };
 
@@ -30,7 +30,7 @@
 
         default_layer {
             bindings = <
-                &enter_bt_tap_dance    // Tap = ENTER, Double Tap = Bluetooth Clear
+                &bt_ht 0 0    // Tap = ENTER, Double Tap = Bluetooth Clear
                 &bt BT_CLR             // Key 2: Normal Space Key
             >;
         };
