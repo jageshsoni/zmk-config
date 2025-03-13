@@ -10,9 +10,6 @@
 
 
 / {
-    zmk-config {
-        tapping-term-ms = <2000>;  // Global tapping term
-    };
 
     macros {
         bt_clr_macro: bt_clr_macro {
@@ -31,7 +28,7 @@
     behaviors {
         td_bt_actions: td_bt_actions {
             compatible = "zmk,behavior-tap-dance";
-            
+            tapping-term-ms = <500>;
             #binding-cells = <0>;
             bindings = <&kp ENTER>, <&kp A>, <&kp S>;
         };
