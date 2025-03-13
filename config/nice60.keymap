@@ -14,13 +14,9 @@
 
         default_layer {
             bindings = <
-                &ht BT_CLR ENTER  // Key 1: Tap = Enter, Hold = Bluetooth Clear
+                &mt BT_CLR ENTER  // Key 1: Tap = Enter, Hold = Bluetooth Clear
                 &kp SPACE         // Key 2: Normal Space Key
             >;
         };
-    };
-
-    zmk-config {
-        hold-tap-ms = <2000>;  // Hold activates after 500ms
     };
 };
