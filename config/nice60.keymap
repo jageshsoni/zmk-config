@@ -20,7 +20,7 @@
     behaviors {
         enter_bt_tap_dance: enter_bt_tap_dance {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp ENTER>, <&bt_clr>;
         };
     };
