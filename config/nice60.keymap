@@ -8,8 +8,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 
-&ht {
-    tapping-term-ms = <400>; // Global tap-hold threshold
+&mt {
+    tapping-term-ms = <400>;
 };
 
 / {
@@ -24,7 +24,7 @@
 
         default_layer {
             bindings = <
-                &ht ENTER &bt_clear_macro
+                &mt ENTER &bt_clear_macro
                 &kp SPACE
             >;
         };
