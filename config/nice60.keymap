@@ -13,23 +13,12 @@
 };
 
 / {
-    behaviors {
-        bt_ht: bt_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred"; // Prioritizes hold action if held
-            tapping-term-ms = <400>;
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&bt>;   // Tap = Keypress, Hold = Bluetooth Action
-        };
-    };
-
-    keymap {
+        keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &bt_ht ENTER &bt BT_CLR  // Key 1: Tap = ENTER, Hold = Bluetooth Clear
+                &lt 0 ENTER &bt BT_CLR  // Key 1: Tap = ENTER, Hold = Bluetooth Clear
                 &kp SPACE                // Key 2: Normal Space Key
             >;
         };
