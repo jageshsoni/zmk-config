@@ -33,7 +33,7 @@
             compatible = "zmk,behavior-tap-dance";
             
             #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&bt_clr_macro>, <&bt_nxt_macro>;
+            bindings = <&kp ENTER>, <&kp A>, <&kp S>;
         };
     };
 
