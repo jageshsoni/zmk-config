@@ -28,7 +28,7 @@
         col-gpios = < &gpio0 10 (GPIO_ACTIVE_HIGH) >;  // Column for Key 2
     };
 
-    default_transform: isopad_transform {
+    isopad_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <1>;
         rows = <2>;
