@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    macropad_physical_layout: macropad_physical_layout {
+    isopad_physical_layout: isopad_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "2-key macropad layout";
 
