@@ -44,12 +44,7 @@
         ht_td_or_hello: ht_td_or_hello {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";   // Fixes tap/hold preference
-<<<<<<< HEAD
             tapping-term-ms = <300>;  // Reduce time to register tap
-=======
-            tapping-term-ms = <200>;  // Reduce time to register tap
-            quick-tap-ms = <150>; // Helps with rapid taps
->>>>>>> 578a38f5ded39ae5acf4a5f5f92746d6a689e0a1
             #binding-cells = <2>;
             bindings = <&td_bt_actions>, <&hello_macro>; // TAP first, then HOLD
         };
