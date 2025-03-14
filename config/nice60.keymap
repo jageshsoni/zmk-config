@@ -25,12 +25,7 @@
         hello_macro: hello_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F>, <&kp U>, <&kp C>, <&kp K>, <&kp SPACE>, <&kp Y>, <&kp O>, <&kp U>;
-        };
-        tap_dance_macro: tap_dance_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&td_bt_actions>;
+            bindings = <&kp H>, <&kp E>, <&kp L>, <&kp L>, <&kp O>;
         };
     };
 
@@ -39,14 +34,14 @@
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <300>;
             #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&kp F>, <&kp U>;
+            bindings = <&kp ENTER>, <&kp A>, <&kp S>;
         };
         ht_td_or_hello: ht_td_or_hello {
             compatible = "zmk,behavior-hold-tap";
-            flavor = "balanced";   // Fixes tap/hold preference
-            tapping-term-ms = <300>;  // Reduce time to register tap
+            flavor = "tap-preferred";  
+            tapping-term-ms = <300>; 
             #binding-cells = <2>;
-            bindings = <&td_bt_actions>, <&hello_macro>; // TAP first, then HOLD
+            bindings = <&td_bt_actions>, <&hello_macro>; // Tap = Tap Dance, Hold = HELLO
         };
     };
 
@@ -55,7 +50,7 @@
 
         default_layer {
             bindings = <
-                &ht_td_or_hello 0 0
+                &td_bt_actions
                 &bt BT_CLR
             >;
         };
