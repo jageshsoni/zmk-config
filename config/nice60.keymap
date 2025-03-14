@@ -43,10 +43,10 @@
         };
         ht_td_or_hello: ht_td_or_hello {
             compatible = "zmk,behavior-hold-tap";
-            flavor = "hold-preferred";   // Prioritizes hold
-            tapping-term-ms = <300>;
+            flavor = "balanced";   // Fixes tap/hold preference
+            tapping-term-ms = <300>;  // Reduce time to register tap
             #binding-cells = <2>;
-            bindings = <&tap_dance_macro>, <&hello_macro>;
+            bindings = <&td_bt_actions>, <&hello_macro>; // TAP first, then HOLD
         };
     };
 
