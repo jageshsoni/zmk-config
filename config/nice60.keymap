@@ -22,7 +22,16 @@
             #binding-cells = <0>;
             bindings = <&bt BT_NXT>;
         };
-
+        hello_macro: hello_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F>, <&kp U>, <&kp C>, <&kp K>, <&kp SPACE>, <&kp Y>, <&kp O>, <&kp U>;
+        };
+        tap_dance_macro: tap_dance_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&td_bt_actions>;
+        };
     };
 
     behaviors {
@@ -32,6 +41,13 @@
             #binding-cells = <0>;
             bindings = <&kp ENTER>, <&bt_nxt_macro>, <&bt_clr_macro>;
         };
+        ht_td_or_hello: ht_td_or_hello {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";   // Prioritizes hold
+            tapping-term-ms = <300>;
+            #binding-cells = <2>;
+            bindings = <&tap_dance_macro>, <&hello_macro>;
+        };
     };
 
     keymap {
@@ -39,7 +55,7 @@
 
         default_layer {
             bindings = <
-                &td_bt_actions
+                &ht_td_or_hello 0 0
                 &bt BT_CLR
             >;
         };
