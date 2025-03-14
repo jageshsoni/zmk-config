@@ -40,6 +40,7 @@
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <300>; 
             #binding-cells = <2>;
+            bindings = <&hello_macro>, <&td_bt_actions>;
         };
     };
 
