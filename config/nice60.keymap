@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <300>;
             #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&bt_nxt_macro>, <&bt_clr_macro>;
+            bindings = <&kp ENTER>, <&kp F>, <&kp U>;
         };
         ht_td_or_hello: ht_td_or_hello {
             compatible = "zmk,behavior-hold-tap";
