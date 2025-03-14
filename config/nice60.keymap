@@ -39,7 +39,7 @@
         ht_td_or_hello: ht_td_or_hello {
             compatible = "zmk,behavior-hold-tap";
             flavor = "tap-preferred";  
-            tapping-term-ms = <300>; 
+            tapping-term-ms = <300>;
             #binding-cells = <2>;
             bindings = <&td_bt_actions>, <&hello_macro>; // Tap = Tap Dance, Hold = HELLO
         };
@@ -50,7 +50,7 @@
 
         default_layer {
             bindings = <
-                &td_bt_actions
+                &ht_td_or_hello 0 0
                 &bt BT_CLR
             >;
         };
